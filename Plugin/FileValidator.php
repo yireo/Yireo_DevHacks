@@ -19,6 +19,10 @@ class FileValidator
      **/
     public function aroundIsValid($subject, $proceed, $filename)
     {
+        if ($filename == false || !is_file($filename)) {
+            return false;
+        }
+
         return $proceed($filename) || file_exists($filename);
     }
 }
