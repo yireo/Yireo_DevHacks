@@ -4,8 +4,7 @@ Magento 2 module with development hacks, that came in handy for myself.
 ## Installation
 Use the following commands to install:
 
-    composer config repositories.yireo-devhacks vcs git@github.com:yireo/Yireo_DevHacks.git
-    composer require yireo/magento2-devhacks:dev-master
+    composer require yireo/magento2-devhacks:@dev --dev
 
 Enable this module:
 
