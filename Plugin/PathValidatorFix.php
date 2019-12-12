@@ -9,7 +9,7 @@ use Magento\Framework\Filesystem\DriverPool;
 
 /**
  * Class PathValidatorFix
- * @package Yireo\DevHacks\Plugin
+ * @package Jola\DevHacks\Plugin
  */
 class PathValidatorFix extends ReadFactory
 {

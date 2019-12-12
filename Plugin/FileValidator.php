@@ -5,7 +5,7 @@ namespace Yireo\DevHacks\Plugin;
 
 /**
  * Class FileValidator
- * @package Yireo\DevHacks\Plugin
+ * @package Jola\DevHacks\Plugin
  */
 class FileValidator
 {

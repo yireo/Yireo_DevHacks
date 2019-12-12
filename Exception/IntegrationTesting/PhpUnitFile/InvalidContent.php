@@ -7,7 +7,7 @@ use Exception;
 
 /**
  * Class InvalidContent
- * @package Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile
+ * @package Jola\DevHacks\Exception\IntegrationTesting\PhpUnitFile
  */
 class InvalidContent extends Exception
 {
