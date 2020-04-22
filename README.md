@@ -17,6 +17,8 @@ The core checks whether PHTML templates are in the path of the Magento core. Whe
 ## Toggle TESTS_CLEANUP in integration tests configuration
 When running integration tests, you probably want to frequently toggle the constant `TESTS_CLEANUP` from `disabled` to `enabled` to `disabled`. The following command-line easily allows for this (assuming the file is actually `dev/tests/integration/phpunit.xml` cause you shouldn't modify the `*.dist` version):
 
-    bin/magento yireo_devhacks:toggle_testscleanup
+    bin/magento yireo_devhacks:toggle_tests_cleanup
     
-It is toggled. Bam.
+It is toggled. You can also set the value directly:
+
+    bin/magento yireo_devhacks:toggle_tests_cleanup enabled

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile;
@@ -6,6 +7,7 @@ namespace Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile;
 use Magento\Framework\Exception\FileSystemException;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -43,8 +45,9 @@ class ToggleTestsCleanup extends Command
      */
     protected function configure()
     {
-        $this->setName('yireo_devhacks:toggle_testscleanup')
-            ->setDescription('Toggle the variable TESTS_CLEANUP in dev/tests/integration/phpunit.xml');
+        $this->setName('yireo_devhacks:toggle_tests_cleanup')
+            ->setDescription('Toggle the variable TESTS_CLEANUP in dev/tests/integration/phpunit.xml')
+            ->addArgument('state', InputArgument::OPTIONAL, 'Set to either "enabled" or "disabled"');
     }
 
     /**
@@ -61,10 +64,11 @@ class ToggleTestsCleanup extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $currentValue = $this->phpUnitConstant->getValue('TESTS_CLEANUP');
-        $newValue = ($currentValue == 'enabled') ? 'disabled' : 'enabled';
+        $newValue = $this->determineNewValue($input, $currentValue);
 
         if ($this->phpUnitConstant->changeValue('TESTS_CLEANUP', $newValue) === true) {
-            $msg = sprintf('Constant "%s" has been switched from "%s" to "%s"',
+            $msg = sprintf(
+                'Constant "%s" has been switched from "%s" to "%s"',
                 "TESTS_CLEANUP",
                 $currentValue,
                 $newValue
@@ -74,5 +78,20 @@ class ToggleTestsCleanup extends Command
         }
 
         return $output->writeln('Constant "TESTS_CLEANUP" has not been changed');
+    }
+
+    /**
+     * @param InputInterface $input
+     * @param string $currentValue
+     * @return string
+     */
+    private function determineNewValue(InputInterface $input, string $currentValue): string
+    {
+        $newState = $input->getArgument('state');
+        if (in_array($newState, ['enabled', 'disabled'])) {
+            return $newState;
+        }
+
+        return ($currentValue == 'enabled') ? 'disabled' : 'enabled';
     }
 }
