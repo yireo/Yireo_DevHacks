@@ -7,7 +7,7 @@ use Exception;
 
 /**
  * Class FileNotFound
- * @package Jola\DevHacks\Exception\IntegrationTesting\PhpUnitFile
+ * @package Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile
  */
 class FileNotFound extends Exception
 {

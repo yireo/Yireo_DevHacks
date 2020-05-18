@@ -18,7 +18,7 @@ use Yireo\DevHacks\Utilities\IntegrationTesting\PhpUnitFile\Constant;
 
 /**
  * Class ToggleTestsCleanup
- * @package Jola\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile
+ * @package Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile
  */
 class ToggleTestsCleanup extends Command
 {

@@ -12,7 +12,7 @@ use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\InvalidContent;
 
 /**
  * Class Constant
- * @package Jola\DevHacks\Utilities\IntegrationTesting\PhpUnitFile
+ * @package Yireo\DevHacks\Utilities\IntegrationTesting\PhpUnitFile
  */
 class Constant
 {

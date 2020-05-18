@@ -13,7 +13,7 @@ use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\FileNotFound;
 
 /**
  * Class PhpUnitFile
- * @package Jola\DevHacks\Utilities\IntegrationTesting
+ * @package Yireo\DevHacks\Utilities\IntegrationTesting
  */
 class PhpUnitFile
 {

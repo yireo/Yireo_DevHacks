@@ -7,7 +7,7 @@ use Exception;
 
 /**
  * Class ConstantNotFound
- * @package Jola\DevHacks\Exception\IntegrationTesting\PhpUnitFile
+ * @package Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile
  */
 class ConstantNotFound extends Exception
 {

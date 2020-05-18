@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Framework\Filesystem\Directory\ReadFactory" type="Yireo\DevHacks\Plugin\PathValidatorFix"/>
+    <preference for="Magento\Framework\Filesystem\Directory\ReadFactory" type="Yireo\DevHacks\Override\DirectoryReadFactoryWithPathFixed"/>
 
     <type name="Magento\Framework\View\Element\Template\File\Validator">
         <plugin name="templatesymlink_view_element_template_file_validator" type="Yireo\DevHacks\Plugin\FileValidator" sortOrder="10" disabled="false"/>
@@ -9,7 +9,7 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="yireo_devhacks_integrationtesting_phpunit_toggletestscleanup" xsi:type="object">\Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile\ToggleTestsCleanup</item>
+                <item name="yireo_devhacks_integrationtesting_phpunit_toggletestscleanup" xsi:type="object">Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile\ToggleTestsCleanup</item>
             </argument>
         </arguments>
     </type>
