@@ -33,6 +33,15 @@ class Constant
     }
 
     /**
+     * @param string $fileName
+     * @throws FileNotFound
+     */
+    public function setFileName(string $fileName)
+    {
+        $this->phpUnitFile->setFileName($fileName);
+    }
+
+    /**
      * @param string $name
      * @return string
      * @throws FileNotFound

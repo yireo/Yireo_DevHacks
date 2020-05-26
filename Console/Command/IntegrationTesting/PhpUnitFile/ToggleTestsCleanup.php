@@ -63,21 +63,45 @@ class ToggleTestsCleanup extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        $this->toggleValue('dev/tests/integration/phpunit.xml', $input, $output);
+        $this->toggleValue('dev/tests/quick-integration/phpunit.xml', $input, $output);
+    }
+
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return mixed
+     * @throws ConstantNotFound
+     * @throws FileNotFound
+     * @throws FileSystemException
+     * @throws InvalidContent
+     */
+    private function toggleValue(string $fileName, InputInterface $input,  OutputInterface $output): bool
+    {
+        try {
+            $this->phpUnitConstant->setFileName($fileName);
+        } catch(FileNotFound $fileNotFound) {
+            return false;
+        }
+
         $currentValue = $this->phpUnitConstant->getValue('TESTS_CLEANUP');
         $newValue = $this->determineNewValue($input, $currentValue);
 
         if ($this->phpUnitConstant->changeValue('TESTS_CLEANUP', $newValue) === true) {
             $msg = sprintf(
-                'Constant "%s" has been switched from "%s" to "%s"',
+                'Constant "%s" has been switched from "%s" to "%s" for file "%s"',
                 "TESTS_CLEANUP",
                 $currentValue,
-                $newValue
+                $newValue,
+                $fileName
             );
 
-            return $output->writeln($msg);
+            $output->writeln($msg);
+            return true;
         }
 
-        return $output->writeln('Constant "TESTS_CLEANUP" has not been changed');
+        $output->writeln('Constant "TESTS_CLEANUP" has not been changed');
+        return true;
     }
 
     /**

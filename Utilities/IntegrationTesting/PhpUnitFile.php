@@ -33,6 +33,11 @@ class PhpUnitFile
     private $writeFactory;
 
     /**
+     * @var string
+     */
+    private $fileName = 'dev/tests/integration/phpunit.xml';
+
+    /**
      * Constant constructor.
      * @param DirectoryList $directoryList
      * @param ReadFactory $readFactory
@@ -46,6 +51,16 @@ class PhpUnitFile
         $this->directoryList = $directoryList;
         $this->readFactory = $readFactory;
         $this->writeFactory = $writeFactory;
+    }
+
+    /**
+     * @param string $fileName
+     * @throws FileNotFound
+     */
+    public function setFileName(string $fileName)
+    {
+        $this->fileName = $fileName;
+        $this->getFilePath();
     }
 
     /**
@@ -98,7 +113,7 @@ class PhpUnitFile
      */
     public function getFilePath(): string
     {
-        $file = $this->directoryList->getRoot() . '/dev/tests/integration/phpunit.xml';
+        $file = $this->directoryList->getRoot() . '/' . $this->fileName;
         if (file_exists($file)) {
             return $file;
         }
