@@ -10,10 +10,6 @@ use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\ConstantNotFound;
 use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\FileNotFound;
 use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\InvalidContent;
 
-/**
- * Class Constant
- * @package Yireo\DevHacks\Utilities\IntegrationTesting\PhpUnitFile
- */
 class Constant
 {
     /**

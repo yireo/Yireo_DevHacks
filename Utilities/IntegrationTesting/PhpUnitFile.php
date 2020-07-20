@@ -11,10 +11,6 @@ use Magento\Framework\Filesystem\File\WriteFactory;
 use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\InvalidContent;
 use Yireo\DevHacks\Exception\IntegrationTesting\PhpUnitFile\FileNotFound;
 
-/**
- * Class PhpUnitFile
- * @package Yireo\DevHacks\Utilities\IntegrationTesting
- */
 class PhpUnitFile
 {
     /**
