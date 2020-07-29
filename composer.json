@@ -16,8 +16,8 @@
     }
   ],
   "require": {
-    "magento/framework": "^100.0|^101.0|^102.0",
-    "php": ">=7.0.0|<7.3",
+    "magento/framework": "^100.0|^101.0|^102.0|^103.0",
+    "php": ">=7.2.0",
     "ext-pcre": "*"
   },
   "autoload": {
