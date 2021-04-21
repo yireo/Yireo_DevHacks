@@ -44,7 +44,7 @@ class DirectoryReadFactoryWithPathFixed extends DirectoryReadFactory
             $this->customDriverPool
         );
 
-        return new DirectoryRead(
+        return new DirectoryReadWithPathFixed(
             $factory,
             $driver,
             $path

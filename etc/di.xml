@@ -2,6 +2,8 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Magento\Framework\Filesystem\Directory\ReadFactory" type="Yireo\DevHacks\Override\DirectoryReadFactoryWithPathFixed"/>
 
+    <preference for="Magento\Framework\Filesystem\Directory\ReadInterface" type="Yireo\DevHacks\Override\DirectoryReadWithPathFixed"/>
+
     <type name="Magento\Framework\View\Element\Template\File\Validator">
         <plugin name="templatesymlink_view_element_template_file_validator" type="Yireo\DevHacks\Plugin\FileValidator" sortOrder="10" disabled="false"/>
     </type>
