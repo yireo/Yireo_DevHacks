@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2021-05-13
+### Fixed
+- Fix new path validator by using "hack files"
+
 ## [0.1.1] - 2020-07-29
 ### Fixed
 - Fixed 2.4 compatibility
