@@ -5,7 +5,6 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="yireo_devhacks_integrationtesting_phpunit_toggletestscleanup" xsi:type="object">Yireo\DevHacks\Console\Command\IntegrationTesting\PhpUnitFile\ToggleTestsCleanup</item>
                 <item name="yireo_devhacks_copy_hacks" xsi:type="object">Yireo\DevHacks\Console\Command\CopyHacks</item>
             </argument>
         </arguments>
