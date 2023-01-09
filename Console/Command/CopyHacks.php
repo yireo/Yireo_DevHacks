@@ -2,8 +2,9 @@
 
 namespace Yireo\DevHacks\Console\Command;
 
+use Magento\Framework\Filesystem\Directory\PathValidator;
+use Magento\Framework\View\Element\Template\File\Validator as TemplateFileValidator;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -19,7 +20,8 @@ class CopyHacks extends Command
     {
         $copyDir = dirname(__DIR__) . '/../Copy';
         $copies = [
-            \Magento\Framework\Filesystem\Directory\PathValidator::class => 'PathValidator.php'
+            PathValidator::class => 'PathValidator.php',
+            TemplateFileValidator::class => 'TemplateFileValidator.php'
         ];
 
         foreach ($copies as $className => $copyFile) {
