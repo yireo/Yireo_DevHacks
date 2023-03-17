@@ -16,7 +16,7 @@ class CopyHacks extends Command
             ->setDescription('Copy some hacks');
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $copyDir = dirname(__DIR__) . '/../Copy';
         $copies = [
@@ -39,5 +39,7 @@ class CopyHacks extends Command
 
             copy($copyFile, $originalFile);
         }
+
+        return 0;
     }
 }
