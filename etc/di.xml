@@ -9,4 +9,9 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Framework\Filesystem\Driver\File">
+        <plugin name="Yireo_DevHacks::allowExternalAbsolutePaths"
+                type="Yireo\DevHacks\Plugin\AllowExternalAbsolutePaths"/>
+    </type>
 </config>
