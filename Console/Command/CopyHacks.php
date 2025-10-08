@@ -3,7 +3,9 @@
 namespace Yireo\DevHacks\Console\Command;
 
 use Magento\Framework\Filesystem\Directory\PathValidator;
+use Magento\Framework\Filesystem\Driver\File;
 use Magento\Framework\View\Element\Template\File\Validator as TemplateFileValidator;
+use ReflectionClass;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -21,11 +23,12 @@ class CopyHacks extends Command
         $copyDir = dirname(__DIR__) . '/../Copy';
         $copies = [
             PathValidator::class => 'PathValidator.php',
-            TemplateFileValidator::class => 'TemplateFileValidator.php'
+            TemplateFileValidator::class => 'TemplateFileValidator.php',
+            File::class => 'File.php',
         ];
 
         foreach ($copies as $className => $copyFile) {
-            $originalFile = (new \ReflectionClass($className))->getFileName();
+            $originalFile = (new ReflectionClass($className))->getFileName();
             if (!file_exists($originalFile)) {
                 $output->writeln('<error>Original file does not exist: ' . $originalFile . '</error>');
                 continue;
