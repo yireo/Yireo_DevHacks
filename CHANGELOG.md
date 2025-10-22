@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 22 October 2025
+### Fixed
+- Add hacked copy of File
+- Remove old hacks
+- Add dev keyword
+- Make exception on empty templates more readable
+- Symfony 6 compliance
+- Add new override
+- Remove integration test CLI
+- Add very simple live test
+
 ## [0.1.2] - 2021-05-13
 ### Fixed
 - Fix new path validator by using "hack files"
