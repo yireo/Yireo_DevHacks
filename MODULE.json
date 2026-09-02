@@ -7,5 +7,7 @@
         "unit": 0,
         "integration": 0,
         "functional": 0
-    }
+    },
+    "module_name": "Yireo_DevHacks",
+    "composer_name": "yireo/magento2-devhacks"
 }
