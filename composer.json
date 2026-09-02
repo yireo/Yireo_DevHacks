@@ -19,7 +19,7 @@
     "require": {
         "ext-pcre": "*",
         "magento/framework": "^100.0|^101.0|^102.0|^103.0",
-        "php": ">=7.2.0"
+        "php": ">=8.2 <8.6"
     },
     "autoload": {
         "psr-4": {
