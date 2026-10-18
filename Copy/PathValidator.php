@@ -14,7 +14,7 @@ class PathValidator implements PathValidatorInterface
     /**
      * @param DriverInterface $driver
      */
-    public function __construct(DriverInterface $driver)
+    public function __construct(DriverInterface $driver) // @phpstan-ignore constructor.unusedParameter
     {
     }
 
