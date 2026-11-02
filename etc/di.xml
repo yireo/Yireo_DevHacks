@@ -7,4 +7,6 @@
             </argument>
         </arguments>
     </type>
+
+    <preference for="Magento\Deploy\Service\MinifyTemplates" type="Yireo\DevHacks\Service\MinifyTemplates"/>
 </config>
