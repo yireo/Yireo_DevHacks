@@ -9,5 +9,7 @@
         "functional": 0
     },
     "module_name": "Yireo_DevHacks",
-    "composer_name": "yireo/magento2-devhacks"
+    "composer_name": "yireo/magento2-devhacks",
+    "phpcs_severity": "9",
+    "phpstan_level": "1"
 }
