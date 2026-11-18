@@ -1,5 +1,8 @@
 {
-    "sequence": [],
+    "sequence": [
+        "Magento_Deploy",
+        "Magento_Store"
+    ],
     "modules": [],
     "components": [],
     "config": [],
