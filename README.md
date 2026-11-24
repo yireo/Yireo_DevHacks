@@ -9,6 +9,25 @@
 
 Magento 2 module with development hacks, that came in handy for myself.
 
+## Warning: development only
+Never install this module in production, or on any publicly reachable environment. It deliberately disables security checks of the Magento core.
+
+The command `bin/magento yireo_devhacks:copy_hacks` overwrites the following core files in `vendor/magento/framework` with the files in `Copy/`:
+
+- `Filesystem/Directory/PathValidator.php`: path validation is disabled, so directory objects no longer block path traversal;
+- `View/Element/Template/File/Validator.php`: any file on disk is accepted as a template;
+- `Filesystem/Driver/File.php`: any path starting with `/data/git/yireo` is returned as absolute path without validation. This file is a frozen copy of the core driver and replaces newer core versions (including security fixes).
+
+These overwrites stay in place after the module is disabled or removed. Restore the original core files with:
+
+    composer reinstall magento/framework
+
+Consider the core alternatives first:
+- `bin/magento config:set dev/template/allow_symlink 1` to allow templates outside of the Magento root;
+- `bin/magento setup:static-content:deploy --no-html-minify` to skip HTML minification.
+
+The other hacks of this module (skipping HTML minification and throwing an exception for blocks without a template file) are only active in developer mode.
+
 ## Installation
 Use the following commands to install:
 
