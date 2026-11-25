@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 25 November 2026
+### Added
+- Skip HTML minification of PHTML templates during static content deployment (only in developer mode)
+
+### Changed
+- Require PHP 8.2 up to 8.5; PHP 8.1 and older are no longer supported
+- Declare the missing dependencies on Magento_Deploy and Magento_Store
+- README now warns that this module is for development only and lists the core files that the copy command overwrites
+
+### Fixed
+- Blocks without a template file no longer throw an exception outside developer mode
+- jQuery Migrate warnings are no longer silently muted on every frontend page
+- PHP 8.4 deprecation warnings about implicitly nullable parameters in the copied filesystem driver
+
 ## [0.1.3] - 22 October 2025
 ### Fixed
 - Add hacked copy of File
