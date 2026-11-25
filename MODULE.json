@@ -3,16 +3,27 @@
         "Magento_Deploy",
         "Magento_Store"
     ],
-    "modules": [],
+    "modules": [
+        "Magento_Deploy",
+        "Magento_Store"
+    ],
     "components": [],
     "config": [],
     "tests": {
-        "unit": 0,
-        "integration": 0,
+        "unit": 6,
+        "integration": 4,
         "functional": 0
     },
     "module_name": "Yireo_DevHacks",
     "composer_name": "yireo/magento2-devhacks",
     "phpcs_severity": "9",
-    "phpstan_level": "1"
+    "phpstan_level": "1",
+    "php_versions": [
+        "8.1",
+        "8.2",
+        "8.3",
+        "8.4"
+    ],
+    "skip_magento_versions": [],
+    "skip_css_utils": false
 }
